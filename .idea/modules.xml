@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Html_practice.iml" filepath="$PROJECT_DIR$/Html_practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/css基础/css基础.iml" filepath="$PROJECT_DIR$/css基础/css基础.iml" />
+      <module fileurl="file://$PROJECT_DIR$/品优购/品优购.iml" filepath="$PROJECT_DIR$/品优购/品优购.iml" />
+      <module fileurl="file://$PROJECT_DIR$/学成网/学成网.iml" filepath="$PROJECT_DIR$/学成网/学成网.iml" />
+    </modules>
+  </component>
+</project>
