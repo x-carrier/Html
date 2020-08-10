@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行内块和文字对齐</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            margin: auto; /*盒子水平居中*/
+            text-align: center; /*文字水平居中*/
+             /*文字垂直居中  但对块级元素无效 只针对行内元素和行内块元素*/
+            /*通常用来控制图片/表单与文字的对齐方式*/
+            /*vertical-align: middle;*/
+        }
+        img {
+            /*图片和文字默认基线对齐*/
+            /*vertical-align: baseline;*/
+            /*设置图片和文字顶线对齐*/
+            /*vertical-align: top;*/
+            /*设置图片和文字中线对齐*/
+            vertical-align: middle;
+            /*设置图片和文字底线线对齐*/
+            /*vertical-align: bottom;*/
+        }
+        textarea {
+            width: 350px;
+            height: 200px;
+            resize: none;
+            outline: none;
+            background-color: pink;
+            border: 2px solid coral;
+            /*vertical-align: middle;*/
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div>文字居中</div>
+    <hr>
+<!--    图片和文字默认基线对齐-->
+    <img src="images/taobao.jpg">淘宝图片
+    <hr>
+    留言栏：<textarea></textarea>
+
+
+</body>
+</html>

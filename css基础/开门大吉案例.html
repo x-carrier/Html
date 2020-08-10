@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开门大吉案例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            perspective: 500px;
+        }
+        section {
+            width: 450px;
+            height: 300px;
+            margin: auto;
+            position: relative;
+            border: 1px solid red;
+            background: url("images/3.jpg") no-repeat ;
+        }
+        .door-l,
+        .door-r {
+            height: 100%;
+            width: 50%;
+            background-color: pink;
+            position: absolute;
+            border: 1px solid black;
+            top: 0;
+            transition: all 0.5s;
+            background: url("images/door.png");
+        }
+        .door-l {
+            /*调整中心点*/
+            transform-origin: left;
+        }
+        .door-r {
+            transform-origin: right;
+            right: 0;
+        }
+        .door-l::before {
+            position: absolute;
+            content: "";
+            right: 0;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+        .door-r::before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            transform: translate(50%,-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+        section:hover .door-l {
+            transform: rotateY(-180deg);
+        }
+        section:hover .door-r {
+            transform: rotateY(180deg);
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="door-l"></div>
+        <div class="door-r"></div>
+    </section>
+</body>
+</html>

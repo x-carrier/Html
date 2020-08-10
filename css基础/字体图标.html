@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字体图标</title>
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <style>
+        @font-face {
+            /*电脑中没有的字体需要声明*/
+            font-family: 'icomoon';
+            src:  url('fonts/icomoon.eot?7kkyc2');
+            src:  url('fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+            url('fonts/icomoon.ttf?7kkyc2') format('truetype'),
+            url('fonts/icomoon.woff?7kkyc2') format('woff'),
+            url('fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        span {
+            font-family: "icomoon";
+            color: pink;
+            font-size: 100px;
+        }
+        span::before {
+            content: "\eac2";
+        }
+        .iconqiangxie-ak {
+            font-size: 100px;
+            color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<!--    第一步：下载SVG图片-->
+<!--第二步：打开icomoon.com 点击new set from selection，将svg图片拖进去-->
+<!-- 点击generate font 下载字体-->
+<!--复制压缩包里的font文件夹到项目中-->
+<!--在样式中声明字体 （复制粘贴）-->
+<span></span><!--中间有内容，去解压包里的demo.html复制图标来这里粘贴即可-->
+<!--引入阿里图标-->
+<span class="iconfont iconqiangxie-ak"></span>
+</body>
+</html>

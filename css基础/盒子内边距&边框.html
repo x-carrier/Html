@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子边框</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            /*边框宽度*/
+            border-width: 1px;;
+            /*边框样式*/
+            /*实线*/
+            border-style: solid;
+            /*虚线*/
+            /*border-style: dashed;*/
+            /*点线*/
+            /*border-style: dotted;*/
+            /*边框颜色*/
+            border-color: red;
+            /*单独指定某一边框属性*/
+            border-top: 2px dotted black;
+            border-left:1px dashed blue;
+            border-bottom: none;
+            /*让表格单元格或表头单元格合并相邻的边框*/
+            border-collapse: collapse;
+            /*设置内边距*/
+            /*特殊情况，没有指定宽度，则不会将盒子撑大*/
+            /*padding-left: 50px;
+            padding-top: 50px;*/
+            /*上下左右都是20px*/
+            padding: 20px;
+            /*上下20px，左右40px*/
+            padding: 20px 40px;
+            /*上是10，下是20，左右是30*/
+            padding: 10px 20px 30px;
+            /*顺时针内边距（上右下左）*/
+            padding: 10px 20px 30px 40px;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        你好吖
+    </div>
+</body>
+</html>

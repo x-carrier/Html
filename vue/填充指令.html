@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>填充指令</title>
+</head>
+<body>
+    <div class="app">
+<!--        v-text没有插值闪烁问题，-->
+        <div v-text="msg1"></div>
+<!--        v-html可以填充HTML片段，但存在网站安全问题，建议本网站内部数据可以使用，第三方数据不可使用-->
+        <div v-html="msg2"></div>
+<!--        v-pre填充原始的信息，跳过编译过程-->
+        <div v-pre>{{msg1}}</div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el: '.app',
+            data: {
+                msg1: 'hello Vue',
+                msg2: '<h1>Html<h1>'
+            }
+        });
+    </script>
+</body>
+</html>

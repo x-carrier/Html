@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动</title>
+    <style>
+        /*清除浮动3：声明清除浮动样式   推荐写法*/
+        /*双伪元素法*/
+        .clearfix:after,
+        .clearfix:before {
+            content: "";
+            display: table;
+        }
+        .clearfix:after {
+            clear: both;
+        }
+        /*单伪元素法*/
+        /*.clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            visibility: hidden;
+            clear: both;
+        }*/
+        .clearfix {
+            *zoom: 1; /*为ie6，ie7清除浮动专用*/
+        }
+        /*父级盒子不要填写高度*/
+        .father {
+            width: 500px;
+            background-color: pink;
+            border: 1px solid black;
+            /*清除浮动2：给父级元素添加overflow*/
+            /*overflow: hidden;*/
+        }
+        .damao {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            float: left;
+        }
+        .ermao {
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            float: left;
+        }
+    /*    如果只写什么这些css会导致father高度为0 因为浮动的高度为0*/
+        /*.clear {
+            clear: both;
+        }*/
+    </style>
+</head>
+<body>
+<div class="father clearfix">
+    <div class="damao"></div>
+    <div class="ermao"></div>
+<!--    清除浮动1：添加一个空标签-->
+<!--    <div class="clear"></div>-->
+</div>
+</body>
+</html>

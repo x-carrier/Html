@@ -1,0 +1,391 @@
+/*样式*/
+/*css初始化*/
+* {
+    margin: 0;
+    padding: 0; /*清除内外边距*/
+}
+ul {
+    list-style: none; /*去除列表样式（小点）*/
+}
+/*去除浮动样式*/
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1; /*浏览器兼容*/
+}
+a {
+    color: #050505;
+    text-decoration: none;
+}
+input {
+    border: 0;  /* 所有的表单边框为0 */
+    box-sizing: border-box; /* CSS3盒子模型 border 和 padding 都包含到 width 里面去 */
+}
+.container {  /* 因为我们的版心宽度都是1200 都要居中对齐 我们就声明一个公共类 */
+    width: 1200px;
+    margin: 0 auto;
+}
+/*初始化结束*/
+/*页面头部*/
+body {
+    /*页面的背景色*/
+    background-color: #f3f5f7;
+}
+header {
+    height: 100px;
+    overflow: hidden;
+}
+nav {
+    width: 1366px;
+    height: 42px;
+    margin: 26px auto;  /*盒子居中对齐*/
+}
+.logo {
+    float: left;
+}
+.navbar {
+    float: left;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    margin-left: 50px;
+}
+/*让首页，课程一行显示*/
+.navbar li {
+    float: left;
+}
+.navbar li a {
+    padding: 0 8px;  /*上下为0 左右为8 */
+    display: block;   /*转换为块级元素*/
+    height: 42px;
+}
+.navbar li a:hover {
+    /*鼠标放上去有底边框*/
+    border-bottom: 2px solid #00a4ff;
+}
+/*搜索框部分*/
+.search {
+    width: 410px;
+    height: 38px;
+    float: right;
+}
+/*属性选择器 选择type属性为text的文本框*/
+.search input[type = text] {
+    width: 340px;
+    height: 38px;
+    padding-left: 20px;
+    float: left;
+}
+.search input[type = submit] {
+    width: 50px;
+    height: 38px;
+    float: left;
+    background: #00a4ff url("images/search_06.png") center center no-repeat;
+}
+/*搜索框部分结束*/
+/* 个人中心开始 */
+.personal {
+    float: right;
+    height: 42px;
+    line-height: 42px;  /* 这个行高给父亲， 行高会继承 */
+    margin: 0 15px 0 35px;  /* 上0 右 15  下0 左  35 */
+}
+.personal img {
+    margin: 0 8px;
+    /*设置图片和文字居中对齐*/
+    vertical-align: middle;
+}
+/* 个人中心结束 */
+/*banner部分*/
+.banner {
+    height: 420px;
+    background-color: #1c036c;
+    position: relative; /*子绝父相*/
+}
+.banner_in {
+    height: 420px;
+    background: url("images/banner_03.png") 0 0 no-repeat;
+}
+.slidebar {
+    height: 420px;
+    width: 190px;
+    background: rgba(0,0,0,.3);
+    float: left;
+}
+.slidebar li a {
+    color: #fff;
+    font-size: 14px;
+    padding: 0 20px;
+    /*a是行内元素没有打下*/
+    display: block;
+    /*height: 45px;*/
+    line-height: 45px;  /*单行垂直居中情况下 很多时候，有了行高可以不给高度*/
+}
+.slidebar li a:hover {
+    color: #00a4ff;
+
+}
+.slidebar li span {
+    float: right;
+    font-family: arial; /*一般情况下符号用此字体*/
+}
+/*banner end*/
+/*课程表开始*/
+.timetable {
+    float: right;
+    width: 230px;
+    height: 300px;
+    margin-top: 50px;
+    background-color: #fff;
+}
+.timetable dt {
+    height: 50px;
+    background-color: #9bceea;
+    line-height: 50px;/*文字垂直居中*/
+    text-align: center; /*文字水平居中*/
+    color: #fff;
+    margin-bottom: 6px;
+    font-weight: 700; /*文字加粗*/
+    letter-spacing: 2px; /*调整字间距*/
+}
+.timetable dd {
+    width: 193px;
+    height: 60px;
+    border-bottom: 1px solid #efefef;
+    margin: 0 auto;
+    padding-top: 14px;
+    box-sizing: border-box;
+}
+.timetable dd h4 {
+    font-size: 16px;
+    font-weight: normal; /*让粗体不变粗*/
+    color: #666666;
+}
+.timetable dd p {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+/*结构伪类选择器*/
+.timetable dd:last-child {
+    border: none;
+}
+.timetable dd a {
+    height: 38px;
+    display: block;
+    border: 2px #00a4ff solid;
+    text-align: center;
+    line-height: 38px;
+    font-weight: 700;
+    color: #00a4ff;
+/*    过渡效果*/
+    transition: all 0.5s;
+}
+.timetable dd a:hover {
+    color: #fff;
+    background-color: #00a4ff;
+}
+/*课程表end*/
+/*小黑点部分开始*/
+.black_coin {
+    width: 180px;
+    height: 22px;
+    border-radius: 24px;
+    position: absolute;
+    background-color: rgba(0,0,0,0);
+    left: 50%;
+    margin-left: -90px;
+    bottom: 30px;
+}
+.black_coin li {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #64b6e6;
+    float: left;
+    margin: 5px 0 5px 16px;
+}
+.black_coin a:hover li {
+    width: 15px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #fafafa;
+}
+/*小黑点部分end*/
+/*精品推荐部分开始*/
+.recommend {
+    height: 60px;
+    margin-top: 10px;
+    line-height: 60px;
+    background-color: #fff;
+    /* 盒子阴影 水平位置  垂直位置  模糊距离  影子颜色 */
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+.recommend a{
+    padding: 0 30px;
+    border-right: 1px solid #ccc;
+}
+.recommend a:first-child {
+    color: #00a4ff;
+}
+.recommend a:hover {
+    color: #00a4ff;
+}
+.recommend a:last-child {
+    float: right;
+    border: 0;
+}
+/*精品推荐部分end*/
+/*精品推荐部分开始*/
+/*精品推荐头部*/
+.recom-products {
+    margin-top: 35px;
+}
+.recom-hd {
+    height: 40px;
+}
+.recom-hd h4 {
+    float: left;
+    color: #494949;
+}
+.recom-hd a {
+    float: right;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-right: 26px;
+    color: #a5a5a5;
+}
+.recom-hd a:hover {
+    color: #00a4ff;
+}
+/*精品推荐主体*/
+.recom-bd ul li {
+    width: 230px;
+    height: 270px;
+    background-color: #ffffff;
+    float: left;
+    /*overflow: hidden; 超出部分隐藏*/
+    margin-right: 12px;
+    margin-top: 15px;
+    position: relative; /*子绝父相*/
+/*    过渡效果*/
+    transition: all 0.5s;
+}
+.recom-bd ul li:hover {
+    /*鼠标移到阴影效果*/
+    margin-top: 10px;
+    /* 盒子阴影 水平位置  垂直位置  模糊距离  影子颜色 */
+    box-shadow: 10px 10px 5px 5px rgba(0,0,0,.3);
+}
+.over {
+    overflow: hidden; /*超出部分隐藏*/
+}
+.hot {
+    width: 40px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    right: -3px;
+    top: 5px;
+    background: url("images/sprite.png") no-repeat 0 0;
+}
+.new {
+    width: 40px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    right: -3px;
+    top: 5px;
+    background: url("images/sprite.png") no-repeat 0 -59px;
+}
+/*清除5的倍数的右边距*/
+.recom-bd ul li:nth-child(5n) {
+    margin-right: 0;
+}
+.recom-bd h5,
+.recom-bd p {
+    padding: 0px 20px 0px 25px;
+    box-sizing: border-box;
+}
+.recom-bd h5 {
+    margin-top: 12px;
+    line-height: 22px;
+    font-size: 14px;
+    /*去除加粗效果*/
+    font-weight: normal;
+}
+.recom-bd p {
+    font-size: 12px;
+    margin-top: 20px;
+    color: #c6c6c6;
+}
+.recom-bd span {
+    color: #ff7c2d;
+}
+/*精品推荐部分end*/
+/*页面底部分*/
+footer {
+    /*需要先清除上面大盒子的浮动，不然会重叠到上面去了*/
+    height: 270px;
+    margin-top: 100px;
+    background-color: #fff;
+}
+.footer-in {
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+footer .footer-l {
+    float: left;
+}
+.footer-l image {
+    margin-top: 35px;
+}
+footer .footer-l p {
+    width: 430px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #666666;
+    margin-top: 15px;
+}
+.footer-l a {
+    width: 120px;
+    height: 35px;
+    display: block;
+    font-size: 18px;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 95px;
+    color: #00a4ff;
+    border: 2px solid #00a4ff;
+}
+footer .footer-r {
+    float: right;
+}
+.footer-r dl {
+    float: right;
+    margin-left: 121px;
+}
+.footer-r dt {
+    font-size: 17px;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 15px;
+}
+.footer-r dd  {
+    line-height: 22px;
+    font-size: 13px;
+    color: #333333;
+}
+footer .footer-r a:hover {
+    color: #00a4ff;
+    text-decoration: underline;
+}
+/*页面底部分end*/

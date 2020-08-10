@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>去除图片底侧空白缝隙</title>
+    <style>
+        div {
+            width: 520px;
+            height: 280px;
+            background-color: pink;
+        }
+        img {
+            /*转换为块级元素即可解决这个问题*/
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+<!--        低版本会出现，为做到万无一失还是添加为好-->
+        <img src="images/taobao.jpg">
+    </div>
+</body>
+</html>

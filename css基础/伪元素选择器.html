@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素选择器</title>
+    <style>
+        div::before {
+            content: "小明";
+            background-color: skyblue;;
+        }
+        div::after {
+            content: "猪";
+            background-color: orange;
+        }
+    /*    伪元素选择器本质是插入一个元素（标签 盒子），默认是行内元素，伪元素不占位置*/
+    </style>
+</head>
+<body>
+    <div>是</div>
+</body>
+</html>

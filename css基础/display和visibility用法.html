@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display和visibility用法</title>
+    <style>
+        .div1 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /*隐藏样式但样并未消失，位置不保留*/
+            /*display: none; 消失*/
+            /*display: block; 显示*/
+            /*隐藏样式但样并未消失，位置保留*/
+            /*visibility: hidden; 消失*/
+            visibility: visible; /*显示*/
+        }
+        .div2 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<div class="div2"></div>
+</body>
+</html>

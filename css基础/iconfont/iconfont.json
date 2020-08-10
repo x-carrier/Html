@@ -1,0 +1,16 @@
+{
+  "id": "1938586",
+  "name": "iconfont",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "15433490",
+      "name": "枪械-ak",
+      "font_class": "qiangxie-ak",
+      "unicode": "e6ab",
+      "unicode_decimal": 59051
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝滚动案例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        nav {
+            width: 756px;
+            height: 86px;
+            border: 1px solid pink;
+            margin: 100px auto;
+        /*    溢出隐藏*/
+            overflow: hidden;
+        }
+        li {
+            float: left;
+        }
+        nav ul {
+            width: 200%;
+            /*引入动画*/
+            animation: moving 5s linear infinite; /*linear匀速*/
+        }
+        /*定义动画*/
+        @keyframes moving {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-756px);
+            }
+        }
+        nav:hover ul{
+            /*鼠标放上去动画暂停*/
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><img src="images/nav1.jpg"></li>
+        <li><img src="images/nav2.jpg"></li>
+        <li><img src="images/nav3.jpg"></li>
+        <li><img src="images/nav4.jpg"></li>
+        <li><img src="images/nav5.jpg"></li>
+        <li><img src="images/nav6.jpg"></li>
+        <li><img src="images/nav1.jpg"></li>
+        <li><img src="images/nav2.jpg"></li>
+        <li><img src="images/nav3.jpg"></li>
+        <li><img src="images/nav4.jpg"></li>
+        <li><img src="images/nav5.jpg"></li>
+        <li><img src="images/nav6.jpg"></li>
+    </ul>
+</nav>
+</body>
+</html>

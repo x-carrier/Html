@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解决插值闪烁</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--解决原理：先通过隐藏内容，再在内存中进行值的替换，替换好后再显示最终结果-->
+<div class="app">
+    <div v-cloak>{{msg}}</div>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var vue = new Vue({
+        el: '.app',
+        data: {
+            msg: 'hello Vue'
+        }
+    });
+</script>
+</body>
+</html>

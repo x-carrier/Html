@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>叠放次序</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /*会出现颜色叠加*/
+            position: absolute;
+        }
+        div:first-child {
+            /*设置叠加顺序 后面的数字不带单位，越大级别越高 默认属性为0 取值相同按默认排序*/
+            /*只有相对，绝对，固定定位有此属性，其余的没有*/
+            z-index: 1;
+        }
+        div:nth-child(2){
+            background-color: skyblue;
+            top: 30px;
+            left: 30px;
+            z-index: 2;
+        }
+        div:last-child{
+            background-color: yellowgreen;
+            top: 60px;
+            left: 60px;
+
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-once用法</title>
+</head>
+<body>
+<!--    如果显示的信息后续不需要修改时可以使用v-once指令，这样可以提高性能-->
+<div class="app">
+<!--    具有响应式，数据改变导致内容改变-->
+    <div>{{msg1}}</div>
+<!--    不具有响应式，提高性能-->
+    <div v-once>{{msg2}}</div>
+
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var vue = new Vue({
+        el: '.app',
+        data: {
+            msg1: 'hello Vue',
+            msg2: 'Html'
+        }
+    });
+</script>
+</body>
+</html>

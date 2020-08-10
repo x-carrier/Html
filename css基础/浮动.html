@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+        /*    可以手动添加缝隙*/
+            margin-left: 10px;
+        }
+        /*浮动元素中间没有空隙*/
+        /*添加了浮动相当于将元素的模型转换为了行内块模型*/
+        .test1 {
+            float: left;
+            background-color: red;
+        }
+        .test2 {
+            background-color: green;
+            float: left;
+        }
+        .test3 {
+            background-color: blue;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div class="test1"></div>
+<div class="test2"></div>
+<div class="test3"></div>
+</body>
+</html>

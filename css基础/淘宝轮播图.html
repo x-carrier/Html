@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .slider {
+            width: 520px;
+            height: 280px;
+            margin: 50px auto;
+            position: relative;
+        }
+        .arrow-l {
+            top: 122px;
+            left: 0;
+            position: absolute;
+        }
+        .arrow-r {
+            top: 122px;
+            right: 0;
+            position: absolute;
+        }
+        ul {
+            list-style: none;
+        }
+        .circle {
+            width: 65px;
+            height: 13px;
+            border-radius: 13px;
+            background-color: rgba(255,255,255,.2);
+            position: absolute;
+            bottom: 15px;
+            left: 227px;
+        }
+        .circle li {
+            width: 9px;
+            height: 9px;
+            border-radius: 10px;
+            background-color: #b7b7b7;
+            float: left;
+            margin: 2px;
+        }
+       /* .current {
+            !*由于权重会被上面的背景色层叠掉了*!
+            background-color: #f40;
+        }*/
+        li.current {
+            /*由于权重会被上面的背景色层叠掉了*/
+            background-color: #f40;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <img src="images/taobao.jpg">
+        <a href="#" class="arrow-l"><img src="images/left.png"></a>
+        <a href="#" class="arrow-r"><img src="images/right.png"></a>
+<!--        小圆点-->
+        <ul class="circle">
+           <a href="#"><li class="current"></li></a>
+           <a href="#"><li></li></a>
+           <a href="#"><li></li></a>
+           <a href="#"><li></li></a>
+           <a href="#"><li></li></a>
+        </ul>
+    </div>
+</body>
+</html>

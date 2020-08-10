@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>外边距合并</title>
+    <style>
+        .first{
+            width: 200px;
+            height: 200px;
+            margin-bottom: 100px;
+            background-color: pink;
+        }
+        .second{
+            height: 200px;
+            width: 200px;
+            background-color: purple;
+            /*无效果，会选择两者间较大的外边距来变化*/
+            /*这种情况只会出现在上下外边距，左右外边距不会出现*/
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="first"></div>
+<div class="second"></div>
+</body>
+</html>

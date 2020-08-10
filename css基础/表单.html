@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<body>
+<form action="#" method="get">
+    <label for="username">用户名</label>
+    <input type="text" placeholder="用户名" id="username" name="username"><br>
+    <label for="password">密码</label>
+    <input type="password" placeholder="密码" id="password" name="password"><br>
+    性别：
+    男<input type="radio" value="男" checked="checked" name="sex">
+    女<input type="radio" value="女" name="sex">
+    未知<input type="radio" value="未知" name="sex"><br>
+    爱好：
+    篮球<input type="checkbox" value="篮球" checked="checked" name="fava">
+    羽毛球<input type="checkbox" value="羽毛球">
+    电子游戏<input type="checkbox" value="电子游戏">
+    乒乓球<input type="checkbox" value="乒乓球"><br>
+    <input type="file" value="上传头像"><br>
+    评论区：<br>
+    <textarea>
+        文本内容
+    </textarea><br>
+    城市：
+    <select>
+        <option>---请选择省份---</option>
+        <option>北京</option>
+        <option>上海</option>
+        <option>深圳</option>
+        <option>广东</option>
+    </select><br>
+    <input type="submit">
+    <input type="reset"><br>
+    <input type="image" src="images/1.jpg">
+</form>
+
+</body>
+</html>

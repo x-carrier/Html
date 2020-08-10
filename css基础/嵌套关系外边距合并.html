@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>嵌套关系外边距合并</title>
+    <style>
+        .father{
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            /*解决方案：1.给父盒子设置外边框 2.给父盒子设置padding*/
+        /*    最佳解决方案*/
+            overflow: hidden;
+        }
+        .son{
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            /*会将父盒子一起带下来，叫盒子的塌陷*/
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>

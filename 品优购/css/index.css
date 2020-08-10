@@ -1,0 +1,36 @@
+/*首页样式*/
+.main {
+    width: 980px;
+    height: 455px;
+    margin-left: 220px;
+    margin-top: 10px;
+    margin-bottom: 13px;
+    float: right;
+}
+.focus {
+    width: 720px;
+    height: 455px;
+    float: left;
+    position: relative;
+}
+.newsflash {
+    width: 250px;
+    height: 455px;
+    float: right;
+    background-color: pink;
+}
+.arrow-l,
+.arrow-r {
+    width: 24px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    background-color: rgba(0,0,0,.3);
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+}
+.arrow-r {
+    right: 0px;
+}

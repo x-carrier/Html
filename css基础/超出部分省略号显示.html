@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超出部分省略号显示</title>
+    <style>
+        div {
+            width: 120px;
+            height: 20px;
+            border: 1px solid #f00;
+            /*使用此属性必须先设定不自动换行*/
+            white-space: nowrap;
+            /*还需要与overflow：hidden联合使用*/
+            overflow: hidden;
+            /*不显示省略号，直接裁剪*/
+            /*text-overflow: clip;*/
+            /*多余部分省略号显示*/
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <div>你好，我叫李明，我来自火星</div>
+</body>
+</html>

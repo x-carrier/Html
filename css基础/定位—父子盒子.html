@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子盒子定位</title>
+    <style>
+        .father {
+            width: 500px;
+            height: 400px;
+            background-color: pink;
+            margin: 100px 100px;
+        /*    给父盒子加上定位*/
+            position: absolute;
+        }
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            top: 10px;
+            left: 10px;
+            /*    父级盒子在没有使用对位的情况下，子盒子使用绝对定位是相对于浏览器来定位的 原位置空出*/
+            /*position: absolute;*/
+            /*    父级盒子在没有使用对位的情况下，子盒子使用绝对定位是相对于父盒子来定位的 原位置保留*/
+            /*position: relative;*/
+            /*    父级盒子在使用对位的情况下，子盒子使用绝对定位是相对于最近的父级盒子来定位的 原位置空出*/
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>

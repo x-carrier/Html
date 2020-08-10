@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+    <style>
+        /*绝对定位后的盒子不占位置，不在标准流中*/
+        .d1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /*边偏移*/
+            top: 100px;
+            left: 100px;
+            /*定位模式：绝对定位*/
+            position: absolute;
+        }
+        /*静态定位（默认就是，给不给都是，但不适合边偏移）*/
+        /*一般用来清除定位 一个盒子不想加定位了就加静态定位*/
+        .d2 {
+            width: 100px;
+            height: 200px;
+            background-color: skyblue;
+            top: 100px;
+            left: 100px;
+            position: static;
+        }
+        /*相对定位，相对于原来的位置，相对定位的盒子仍在标准流中*/
+        .d3 {
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            top: 100px;
+            left: 110px;
+            position: relative;
+        }
+        /*固定定位：相对于浏览器的位置，也可以简单认为相当于当前窗口的位置，鼠标滑动位置不变*/
+        .d4 {
+            width: 100px;
+            height: 100px;
+            top: 0;
+            left: 10px;
+            background-color: yellow;
+        }
+        /*添加绝对定位和固定定位后元素也会转换为行内块模式*/
+    </style>
+</head>
+<body>
+    <div class="d1">绝对定位</div>
+    <div class="d2">静态定位</div>
+    <div class="d3">相对定位</div>
+    <div class="d4">固定定位</div>
+</body>
+</html>

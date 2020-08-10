@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑动门</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            display: inline-block;
+            /*不能给宽度，不能写死，推拉门*/
+            /*width: 15px;*/
+            /*用padding来撑开盒子*/
+            padding-left: 15px;
+            height: 33px;
+            background: url("images/lTcb_ve.png") no-repeat;
+            margin: 100px;
+            text-decoration: none;
+            color: white;
+            line-height: 33px;
+        }
+        a span {
+            display: inline-block;
+            height: 33px;
+            padding-right: 15px;
+            float: right;
+            /*右对齐*/
+            background: url("images/lTcb_ve.png") no-repeat right;
+
+        }
+    </style>
+</head>
+<body>
+    <a href="#">
+        <span>海绵宝宝</span>
+    </a>
+    <a href="#">
+        <span>派大星</span>
+    </a>
+    <a href="#">
+        <span>章鱼哥</span>
+    </a>
+</body>
+</html>
