@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义按键修饰符</title>
+</head>
+<body>
+<div class="app">
+    <div>{{msg}}</div>
+    <div>按键代码：{{num}}</div>
+    <input type="text" placeholder="请按下键盘" v-on:keyup="keyCode" v-on:keyup.xiaohong="xiaohong">
+</div>
+<script src="js/vue.js"></script>
+<script>
+// 自定义按键名称
+    Vue.config.keyCodes.xiaohong = 32;
+    var vue = new Vue({
+        el: '.app',
+        data: {
+            num: '',
+            msg: ''
+        },
+        methods: {
+            keyCode:function () {
+                this.num = event.keyCode;
+                this.msg = '';
+            },
+            xiaohong:function () {
+                this.msg = '恭喜你中奖了！！';
+            }
+        }
+    });
+</script>
+</body>
+</html>

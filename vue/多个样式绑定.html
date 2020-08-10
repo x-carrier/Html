@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多个样式绑定</title>
+    <style>
+        .base {
+            width: 200px;
+            height: 200px;
+        }
+        .action1 {
+            border: solid 1px red;
+        }
+        .action2 {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!--        如果有多个样式，用[]和，隔开即可-->
+<!--        普通的样式可以会和动态样式结合-->
+
+        <div class="base" :class="[isAction1,isAction2]"></div>
+        <div class="base" :class='Active'></div>
+        <div class="base" :class='objActive'></div>
+        <button @click="handle">切换</button>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el: '#app',
+            data: {
+                isAction1: 'action1',
+                isAction2: 'action2',
+                Active: ['action1','action2'],
+                objActive:{
+                    action1:true,
+                    action2:true,
+                }
+            },
+            methods: {
+                handle:function() {
+                    // this.isAction1 = '' ;
+                    this.isAction2 =='' ? this.isAction2 = 'action2' : this.isAction2 ='' ;
+                    this.objActive.action2 = !this.objActive.action2;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
