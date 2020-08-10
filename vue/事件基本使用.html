@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件基本使用</title>
+</head>
+<body>
+<div class="app">
+<!--    如果事件直接绑定函数名称，那么默认会传递事件对象为函数的第一个参数-->
+<!--    如果事件绑定函数调用，那么事件必须作为最后一个参数进行显示传递，且固定名称为$event-->
+    <button type="button" @click="hander1" >hander1</button>
+    <button type="button" @click="hander2($event)" >hander2</button>
+</div>
+    <script src="js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el: '.app',
+            data: {
+                msg: 'hello Vue'
+            },
+            methods: {
+                hander1:function () {
+                    console.log(event.target.innerHTML)
+                },
+                hander2:function (event) {
+                    console.log(event.target.innerHTML)
+                },
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>按键事件修饰符</title>
+</head>
+<body>
+<div class="app">
+    <div>已提交{{num}}次</div>
+    <div>用户名：{{username}}</div>
+    <div>密码：{{password}}</div>
+    <input type="text" placeholder="请输入用户名" v-model="username">
+    <input type="password" placeholder="请输入密码" v-on:keyup.enter="hander1"  v-on:keyup.delete="hander2" v-model="password">
+    <input type="submit"></input>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var vue = new Vue({
+        el: '.app',
+        data: {
+            username: '',
+            password: '',
+            num: 0
+        },
+        methods: {
+            hander1:function () {
+                this.num++;
+                console.log(this.username,this.password)
+            },
+            hander2:function () {
+                this.username = '';
+                this.password = '';
+            }
+        }
+    });
+</script>
+</body>
+</html>

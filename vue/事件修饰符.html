@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件修饰符</title>
+</head>
+<body>
+<div class="app">
+    <div>{{num}}</div>
+<!--    冒泡：hander2触发时，hander1也连带被触发了-->
+<!--    .stop阻止冒泡-->
+    <div @click="hander1" >
+<!--        <button @click="hander2">hander2</button>-->
+<!--        vue方式阻止冒泡-->
+        <button @click.stop="hander2">hander2</button>
+    </div>
+<!--    .prevent:阻止默认行为-->
+    <div>
+        <a href="https://www.baidu.com" @click.prevent="hander1">跳转</a>
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var vue = new Vue({
+        el: '.app',
+        data: {
+            msg: 'hello Vue',
+            num: 0,
+        },
+        methods: {
+            hander1:function () {
+                this.num++;
+            },
+            hander2:function () {
+            //    传统阻止冒泡
+            //     event.stopPropagation();
+            },
+        }
+    });
+</script>
+</body>
+</html>

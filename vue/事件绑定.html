@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+</head>
+<body>
+<div class="app">
+    <div>{{num}}</div><br>
+    <input type="button" @click="add" value="点击加一">
+    <input type="button" @click="rem" value="点击减一">
+    <!--    如果先通过修改输入框，会发现会拼上字符串！！！-->
+    <!--    解决方案：改为v.model.number   还有v.model.trim方法，用来去除空格-->
+    <input type="number" v-model.number="x">
+    <input type="button" @click="add_pro(x)" value="点击加">
+    <input type="button" @click="rem_pro(x)" value="点击减">
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var vue = new Vue({
+        el: '.app',
+        data: {
+            num: 0,
+            x: 0
+        },
+        methods: {
+            add:function () {
+                this.num++;
+            },
+            rem:function () {
+                this.num--;
+            },
+            add_pro:function (x) {
+                this.num=this.num+x;
+            },
+            rem_pro:function (x) {
+                this.num=this.num-x;
+            }
+        }
+    });
+</script>
+</body>
+</html>
