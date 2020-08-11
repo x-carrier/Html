@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义局部指令</title>
+</head>
+<body>
+<!--局部指令只能在本组件中使用-->
+<div id="app">
+    <input type="text" v-focus v-color="color">
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            color: 'red',
+        },
+        directives: {
+            color: {
+                inserted: function (el, binding) {
+                    //binding:是一个对象，里面有多种属性，详细看官网
+                    // console.log(binding);
+                    el.style.backgroundColor = binding.value;
+                }
+            },
+            focus:{
+                inserted:function (el) {
+                    //el表示指令绑定的元素
+                    el.focus();
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

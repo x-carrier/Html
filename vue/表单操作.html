@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单操作</title>
+    <style>
+        div {
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <form action="#">
+            <div>
+                <span>姓名:</span>
+                <span>
+                    <input type="text" v-model="username">
+                </span>
+            </div>
+            <div>
+                <span>性别：</span>
+                <span>
+                    <input type="radio" id="male" value="1" v-model="gender">
+                    <label for="male">男</label>
+                    <input type="radio" id="female" value="2" v-model="gender">
+                    <label for="female">女</label>
+                </span>
+            </div>
+            <div>
+                <span>爱好：</span>
+                <span>
+                    <input type="checkbox" id="pingpang" value="1" v-model="hobby">
+                    <label for="pingpang">乒乓</label>
+                    <input type="checkbox" id="dance" value="2" v-model="hobby">
+                    <label for="dance">跳舞</label>
+                    <input type="checkbox" id="swimming" value="3" v-model="hobby">
+                    <label for="swimming">游泳</label>
+                </span>
+            </div>
+            <div>
+                <span>职业</span>
+                <select v-model="job1">
+                    <option value="0">--请选择职业--</option>
+                    <option value="1">工人</option>
+                    <option value="2">白领</option>
+                    <option value="3">商人</option>
+                    <option value="4">老师</option>
+                </select>
+            </div>
+            <div>
+                <span>职业</span>
+                <select v-model="job2" multiple="true">
+                    <option value="0">--请选择职业--</option>
+                    <option value="1">工人</option>
+                    <option value="2">白领</option>
+                    <option value="3">商人</option>
+                    <option value="4">老师</option>
+                </select>
+            </div>
+            <div>
+                <span>个人简介:</span><br>
+                <textarea v-model="desc"></textarea>
+            </div>
+            <div>
+                <input type="submit" @click="handle">
+            </div>
+        </form>
+    </div>
+
+<script src="js/vue.js"></script>
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            username: '',
+            gender: 1,
+            hobby: [] ,
+            job1: '',
+            job2: [],
+            desc: '',
+        },
+        methods: {
+            handle:function () {
+             console.log(this.username,this.gender,this.hobby)
+            }
+        }
+    });
+</script>
+</body>
+</html>

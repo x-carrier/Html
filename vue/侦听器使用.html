@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>侦听器使用</title>
+</head>
+<body>
+<div id="app">
+    <div class="firstName">
+        <span>firstName:</span>
+        <span>
+            <input type="text" v-model="firstName">
+        </span>
+    </div>
+    <div class="lastName">
+        <span>lastName:</span>
+        <span>
+            <input type="text" v-model="lastName">
+        </span>
+    </div>
+    <div>{{fullName}}</div>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            firstName: 'xiao',
+            lastName: 'hong',
+            fullName: 'xiao hong'
+        },
+        watch: {
+            firstName: function(newValue,oldValue) {
+            //  newValue表示变化之后的值  oldValue表示变化前的值
+                console.log('firstname:   '+oldValue+'---'+newValue);
+                this.fullName = newValue + ' '+this.lastName;
+            },
+            lastName: function(newValue,oldValue) {
+                //  newValue表示变化之后的值  oldValue表示变化前的值
+                console.log('lastName:   '+oldValue+'---'+newValue);
+                this.fullName = this.firstName + ' '+newValue;
+            }
+        }
+    });
+</script>
+</body>
+</html>

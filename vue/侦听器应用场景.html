@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>侦听器应用场景</title>
+</head>
+<body>
+<div id="app">
+    <div class="regin">
+        <span>用户名注册:</span>
+        <span>
+<!--            当输入框失去焦点时才调用-->
+            <input type="text" v-model.lazy="username">
+        </span>
+        <span v-html="tip"></span>
+<!--        <p style="color: yellowgreen">正在验证...</p>-->
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            username: '',
+            tip: '',
+        },
+        methods: {
+          checkName:function (username) {
+              var that = this;
+            // 使用定时任务的方式模拟接口调用
+              setTimeout(function () {
+                  if (username == 'admin'){
+                      that.tip = '<span style="color: red">用户名已被注册，请重新输入！</span>'
+                  }else {
+                      that.tip = '<span style="color: green">用户名可以使用</span>'
+                  }
+              },2000)
+          }
+        },
+        watch: {
+            username:function (value) {
+                this.checkName(value);
+                this.tip = '<span style="color: yellowgreen">正在验证...</span>'
+            }
+        }
+    });
+</script>
+</body>
+</html>

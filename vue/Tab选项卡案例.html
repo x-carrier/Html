@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab选项卡案例</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+        }
+        #app {
+            margin: auto;
+        }
+        .tab {
+            height: 52px;
+            margin-top: 50px;
+            margin-left: 450px;
+        }
+        ul li {
+            float: left;
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+            list-style: none;
+            text-align: center;
+            line-height: 50px;
+        }
+        .imgs div {
+            height: 240px;
+            margin-top: 5px;
+            margin-left: 450px;
+            display: none;
+        }
+        .imgs .current {
+            display: block;
+        }
+        .active {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="tab">
+            <ul>
+                <li :class="currentId == index ? 'active' : ''" v-for="(list,index) in lists" :key="list.id" @click="change(index)">
+                    {{list.name}}</li>
+            </ul>
+        </div>
+        <div class="imgs">
+            <div :class="currentId == index ? 'current' : ''" v-for="(list,index) in lists" :key="list.id">
+                <img :src="list.path" alt="表情包1">
+            </div>
+        </div>
+    </div>
+
+<script src="js/vue.js"></script>
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            currentId: 0,
+            lists: [{
+                id: 1,
+                name: '表情包1',
+                path: 'imgs/表情包%20(1).jpg',
+            },{
+                id: 2,
+                name: '表情包2',
+                path: 'imgs/表情包%20(2).jpg',
+            },{
+                id: 3,
+                name: '表情包3',
+                path: 'imgs/表情包%20(3).jpg',
+            }]
+        },
+        methods: {
+            change:function (index) {
+                this.currentId = index;
+            }
+        }
+    });
+</script>
+</body>
+</html>

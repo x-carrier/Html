@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>分支循环结构</title>
@@ -15,6 +15,7 @@
         <div v-else>不及格</div>
 <!--        v-show用法-->
         <div v-show="flag">你是猪</div>
+<!--        小bug 按住enter键按下去时调用方法，一直按下去一直调用方法-->
         <button @click="handle" @keyup.enter="handle">切换</button>
     </div>
     <script src="js/vue.js"></script>

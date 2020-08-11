@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for用法</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+<!--            index必须放在最后面-->
+<!--            key 帮助vue区分不同的元素，提高性能，key的值必须是唯一的-->
+<!--            顺序为value，key，index,名称可以自定义-->
+            <li v-for="(item,index) in fruits" :key="index">{{item + '---' + index}}</li>
+<!--            v-if可以和v-for联合使用，只有符合条件的才进行渲染-->
+            <li v-if="item == '苹果'" v-for="(item,index) in fruits" :key="item.id">{{item + '---' + index}}</li>
+        </ul>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el: '#app',
+            data: {
+                fruits: ['苹果','香蕉','菠萝']
+            },
+            methods: {
+                handle:function () {
+                    this.flag = !this.flag;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

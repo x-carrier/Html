@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义全局指令</title>
+</head>
+<body>
+<!--全局指令的使用范围没有限制-->
+    <div id="app">
+        <input type="text" v-focus v-color="color">
+    </div>
+<script src="js/vue.js"></script>
+<script>
+// 自定义自动对焦的指令
+    Vue.directive('focus',{
+        //inserted函数名称固定
+        inserted:function (el) {
+            //el表示指令绑定的元素
+            el.focus();
+        }
+    });
+    //  带参数指令  改变背景颜色
+    Vue.directive('color',{
+        //inserted函数名称固定
+        inserted:function (el,binding) {
+            //binding:是一个对象，里面有多种属性，详细看官网
+            // console.log(binding);
+            el.style.backgroundColor = binding.value;
+        }
+    });
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            color: 'blue',
+        }
+    });
+</script>
+</body>
+</html>
