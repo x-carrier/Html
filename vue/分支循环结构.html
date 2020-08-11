@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分支循环结构</title>
+</head>
+<body>
+    <div id="app">
+<!--        v-if用法 -->
+        <input type="text" v-model.number="score">
+        <div v-if="score>=90">优秀</div>
+        <div v-else-if="score>=70 && score<90">良好</div>
+        <div v-else-if="score>=60 && score<70">及格</div>
+        <div v-else-if="score==0"></div>
+        <div v-else>不及格</div>
+<!--        v-show用法-->
+        <div v-show="flag">你是猪</div>
+        <button @click="handle" @keyup.enter="handle">切换</button>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el: '#app',
+            data: {
+                score: '' ,
+                flag: true,
+            },
+            methods: {
+                handle:function () {
+                    this.flag = !this.flag;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
