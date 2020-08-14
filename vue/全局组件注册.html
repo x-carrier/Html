@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局组件注册</title>
+</head>
+<body>
+<div id="app">
+    <button-count></button-count>
+</div>
+<script src="js/vue.js"></script>
+<script>
+// 组件命名方式有两种：使用-隔开命名，驼峰命名法
+//其他驼峰命名只能在字符串模板中使用该组件，在普通的标签模板中需要改成-格式（首字母变小写并加上‘-’）
+Vue.component('button-count',{
+   data: function () {
+        return{
+            count: 1,
+        }
+   },
+   // 模板内容必须是单个的根元素
+   // 以下的是错误
+   // template: '<button @click="count++">点击了{{count}}次</button><br><button @click="handle">点击了{{count}}次</button>',
+   // 可以加一个div作为根元素
+   // template: '<div><button @click="count++">点击了{{count}}次</button><br><button @click="handle">点击了{{count}}次</button><div>',
+   //  为避免挤在一行，可以使用模板字符串
+    template:`
+    <div>
+        <button @click="count++">点击了{{count}}次</button><br>
+        <button @click="handle">点击了{{count}}次</button>
+    </div>
+    `,
+    methods:{
+       handle:function () {
+            this.count--;
+       }
+    }
+});
+var vue = new Vue({
+    el: '#app',
+    data: {
+        msg: 'hello Vue'
+    }
+});
+</script>
+</body>
+</html>

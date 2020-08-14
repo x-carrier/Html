@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件键数据交互</title>
+</head>
+<body>
+<div id="app">
+<!--    静态属性传递-->
+    <son title="Hello"></son>
+<!--    动态属性传递-->
+    <son :title="title"></son>
+<!--    多个属性传递-->
+    <son :title="title" content="Word"></son>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    Vue.component('son',{
+        //属性名命名规则和组件命名规则一样，建议就使用-格式命名，不然这里使用驼峰命名法在传递属性时还得转换
+        //模板中没有限制
+        props:['title','content'],
+        data: function () {
+            return {
+                msg: '我是子组件'
+            }
+        },
+        template:`
+            <div>
+                {{msg+"--"+title+"---"+content}}
+            </div>
+        `
+    })
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            title: '我是父组件'
+        }
+    });
+</script>
+</body>
+</html>

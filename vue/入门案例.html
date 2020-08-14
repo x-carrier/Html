@@ -5,13 +5,13 @@
     <title>test1</title>
 </head>
 <body>
-    <div class="app">
+    <div id="app">
         <div>{{msg}}</div>
     </div>
     <script src="js/vue.js"></script>
     <script>
         var vue = new Vue({
-            el: '.app',
+            el: '#app',
             data: {
                 msg: 'hello Vue'
             }

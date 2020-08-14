@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子组件操作父组件数据</title>
+</head>
+<body>
+
+<div id="app">
+    <div :style="{fontSize: fontSize + 'px'}">{{msg}}</div>
+    <menu-item :parr="parr" @enlarge-text1="handle1"></menu-item>
+    <menu-item :parr="parr" @enlarge-text2="handle2($event)"></menu-item>
+</div>
+<script src="js/vue.js"></script>
+<script>
+// <!--props传递数据原则：单项数据流-->
+// <!--只允许父组件向子组件传递数据，-->
+    Vue.component('menu-item',{
+        props: ['parr'],
+        template:`
+        <div>
+            <ul>
+                <li v-for="(item,index) in parr">{{item}}</li>
+            </ul>
+<!--            // 这里例子直接操作了父组件，不建议使用-->
+            <button @click="parr.push('lemon')">添加</button>
+<!--            // 正确子组件传递数据到父组件方法，enlarge-text为自定义事件，@enlarge-text为触发自定义事件-->
+            <button @click="$emit('enlarge-text1')">扩大父组件中的字体大小</button>
+<!--           //子组件向父组件传值  -->
+            <button @click="$emit('enlarge-text2',2)">扩大父组件中的字体大小</button>
+        </div>
+        `
+    });
+    Vue.component('enlarge-text',{
+         template: ''
+    });
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            msg: 'hello',
+            fontSize: 10,
+            parr: ['apple','orange','banana'],
+        },
+        methods: {
+            handle1:function () {
+                this.fontSize += 5;
+            },
+            handle2:function (size) {
+                this.fontSize += size;
+            }
+        }
+    });
+</script>
+</body>
+</html>

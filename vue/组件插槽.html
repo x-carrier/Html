@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件插槽</title>
+</head>
+<body>
+<div id="app">
+<!--    插槽内容写在组件标签里就行-->
+    <test>有bug！！</test>
+    <test>{{msg}}</test>
+<!--    插槽内容没有传递，显示空-->
+    <test></test>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    Vue.component('test',{
+        template:`
+            <div>
+                <strong>Error:</strong>
+<!--                //插槽位置位于模板中,插槽标签名称固定-->
+                <slot></slot>
+<!--                //插槽可以有名称，叫具名插槽-->
+                <slot name="footer"></slot>
+            </div>
+        `
+    });
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            msg: 'hello Vue'
+        }
+    });
+</script>
+</body>
+</html>
